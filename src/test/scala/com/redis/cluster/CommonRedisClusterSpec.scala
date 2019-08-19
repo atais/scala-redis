@@ -26,6 +26,7 @@ trait CommonRedisClusterSpec[A] extends FunSpec with Matchers with IntClusterSpe
     shouldReplaceNode()
     shouldRemoveNode()
     shouldListNodes()
+    ping()
   }
 
   def shouldSet(): Unit = {
@@ -166,6 +167,12 @@ trait CommonRedisClusterSpec[A] extends FunSpec with Matchers with IntClusterSpe
       r.removeServer("node1")
       r.listServers.toSet should equal(nodes.filterNot(_.nodename.equals("node1")).toSet)
       r.close()
+    }
+  }
+
+  def ping(): Unit = {
+    it("should properly respond to ping response") {
+      r.ping.contains("PONG")
     }
   }
 }
