@@ -3,8 +3,8 @@ name := "RedisClient"
 lazy val redisClient = (project in file(".")).settings(coreSettings : _*)
 
 lazy val commonSettings: Seq[Setting[_]] = Seq(
-  organization := "net.debasishg",
-  version := "3.10",
+  organization := "com.github.atais",
+  version := "4.0",
   scalaVersion := "2.12.8",
   crossScalaVersions := Seq("2.12.8", "2.11.12", "2.10.7", "2.13.0"),
 
@@ -55,14 +55,14 @@ lazy val coreSettings = commonSettings ++ Seq(
       </license>
     </licenses>
     <scm>
-      <url>git@github.com:debasishg/scala-redis.git</url>
-      <connection>scm:git:git@github.com:debasishg/scala-redis.git</connection>
+      <url>git@github.com:atais/scala-redis.git</url>
+      <connection>scm:git:git@github.com:atais/scala-redis.git</connection>
     </scm>
     <developers>
       <developer>
-        <id>debasishg</id>
-        <name>Debasish Ghosh</name>
-        <url>http://debasishg.blogspot.com</url>
+        <id>atais</id>
+        <name>Michał Siatkowski</name>
+        <url>https://github.com/atais</url>
       </developer>
     </developers>),
   unmanagedResources in Compile += baseDirectory.map( _ / "LICENSE" ).value
